@@ -4,18 +4,18 @@
 	 $message = $_POST['message'];
 	 
 	 
-	 $email_from = 'https://rajavel452.github.io/';
+	 $email_from = 'https://rajavel452.github.io';
 	 
 	 $email_subject = " contact form";
-	 $email_body = "User Name: $name.\n"
+	 $email_body = "User Name: $name.\n".
 	                "User Email:$visitor_email.\n".
-					  "User Message:$messaage.\n":
+					  "User Message:$messaage.\n";
 	 $to = "rajavel452@gmail.com";
 
      $headers = "From: $email_from\r\n";
-     $headers = "Reply-To :$visitor_email \r\n";
-	 mail($to,$email_subject,$email_body,headers);
-	 header("Location: index.html");
+     $headers .= "Reply-To :$visitor_email \r\n";
+     mail($to,$email_subject,$email_body,$headers);
+     header("Location: index.html");
 	 
 	 
  ?>
